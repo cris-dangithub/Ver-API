@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  color: #fff;
+}
+button {
+  color: #000;
+  cursor: pointer;
+}
+input {
+  outline: none;
+  color: #000;
+}
+img {
+  height: 100px;
+}
+body {
+  min-width: 100vw;
+  background-color: rgb(88, 88, 88);
+}
+body,
+h1,
+p {
+  margin: 0;
+}
+
+.table {
+  display: grid;
+  gap: 4px;
+  padding: 1rem;
+  min-width: 100%;
+}
+
+.descendent {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 0.5rem;
+}
+.descendent__childrens {
+  display: grid;
+  gap: 2px;
+  min-width: fit-content;
+}
+.element {
+  display: flex;
+}
+.father,
+abbr {
+  background-color: cadetblue;
+  min-width: fit-content;
+  text-decoration: none;
+}
+
+.typeData {
+  color: rgb(255, 107, 107);
+}

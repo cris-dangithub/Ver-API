@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ver objeto</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <h1>Ver los elementos de un arreglo u objeto</h1>
+  <form>
+    <label for="apiLink">Ingrese link de la API</label>
+    <input type="text" placeholder="Link API" id="apiLink" name="apiLink">
+    <button  type="submit">Mostrar datos</button>
+  </form>
+  <div class="table"></div>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
+
+
+<!-- 
+Estructura para descendientes:
+<div class="element descendent">
+  <div class="descendent__father father">Arr/Obj</div>
+  <div class="descendent__childrens">Contenido</div>
+</div>
+
+
+Estructura para no descendientes: (numbers, strings, etc)
+<div class="element">Contenido</div>
+
+
+-->
+
+
+
+<!-- 
+  <div class="element">1</div>
+    <div class="element">2</div>
+    <div class="element descendent">
+      <div class="descendent__father father">Obj</div>
+      <div class="descendent__childrens">
+        <div class="element">name:"Cristian"</div>
+        <div class="element">age:22</div>
+      </div>
+    </div>
+
+    <div class="element descendent">
+      <div class="descendent__father father">Arr</div>
+      <div class="descendent__childrens">
+        <div class="element descendent">
+          <div class="descendent__father father">Obj</div>
+          <div class="descendent__childrens">
+            <div class="element">usuario:"Fati"</div>
+            <div class="element">age:20</div>
+            <div class="element descendent">
+              <div class="descendent__father father">Arr</div>
+              <div class="descendent__childrens">
+                <div class="element">bailar</div>
+                <div class="element">bailar</div>
+                <div class="element"><img
+                    src="https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg"
+                    alt="imagen"></div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="element descendent">
+          <div class="descendent__father father">Obj</div>
+          <div class="descendent__childrens">
+            <div class="element">usuario:"Lou"</div>
+            <div class="element">age:18</div>
+            <div class="element descendent">
+              <div class="descendent__father father">redes:Obj</div>
+              <div class="descendent__childrens">
+                <div class="element">twitter:"twiter/fati"</div>
+                <div class="element">facebook:"facebook/fati".................................................................----------------------------------------------------------</div>
+              </div>
+            </div>
+            <div class="element descendent">
+              <div class="descendent__father father">Arr</div>
+              <div class="descendent__childrens">
+                <div class="element">bailar</div>
+                <div class="element">bailar</div>
+                <div class="element">bailar</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+-->
