@@ -14,10 +14,10 @@ const isImageValidation = (element) => {
 
 const printContentNoDescendent = (content, imgContent) => {
   if (!imgContent) {
-    return `<div class="element">${content} <i class='typeData'>(${typeof content})</i></div>`
+    return `<div class="element noDescendent">${content} <i class='typeData'>(${typeof content})</i></div>`
   }
   if (imgContent) {
-    return `<div class="element"><img src="${content}" alt="${content}"></div>`
+    return `<div class="element noDescendent"><img src="${content}" alt="${content}"></div>`
   }
 
 }
@@ -25,14 +25,14 @@ const printContentNoDescendent = (content, imgContent) => {
 const printContentNoDescendentFromObject = (key, content, imgContent) => {
   if (!imgContent) {
     return `
-      <div class="element">
+      <div class="element noDescendent">
         <p>"${key}" ${content} <i class='typeData'>(${typeof content})</i></p>
       </div>
     `
   }
   if (imgContent) {
     return `
-    <div class="element">
+    <div class="element noDescendent">
       "${key}" <img src="${content}" alt="${content}">
     </div>
     `
@@ -84,7 +84,7 @@ const printContentDescendent = (content, key, position) => {
   if (dataType === 'Object') {
     for (let key in content) {
       element = content[key]
-      if (typeof element !== "object") {
+      if (element === null || typeof element !== "object") {
         const isImage = isImageValidation(element)
         if (isImage) {
           html += printContentNoDescendentFromObject(key, element, true)
@@ -93,7 +93,7 @@ const printContentDescendent = (content, key, position) => {
         }
       }
 
-      if (typeof element === "object") html += printContentDescendent(element, key) //!
+      if (element !== null && typeof element === "object") html += printContentDescendent(element, key, undefined) //!
     }
   }
 
