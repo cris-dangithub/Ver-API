@@ -1,5 +1,5 @@
 /* ===== IMPORTACIONES ===== */
-import { printContentNoDescendent, printContentDescendent } from './assets/js/prints.js'
+import { printContentNoDescendentFromArray, printContentDescendent } from './assets/js/prints.js'
 import isImageValidation from './assets/js/imagesValidations.js'
 
 /* ===== PETICION A LA API ===== */
@@ -19,16 +19,13 @@ async function getData(url) {
 /* ===== App Inicial ===== */
 function App(mainArray) {
   let mainHtml = ``
-  for (let element of mainArray) {
+  for (let i = 0; i < mainArray.length; i++) {
+    const element = mainArray[i]
     if (typeof element !== "object") {
-      const isImage = isImageValidation(element)
-      if (isImage) {
-        mainHtml += printContentNoDescendent(element, true)
-      } else {
-        mainHtml += printContentNoDescendent(element, false)
-      }
+      const { validElementExtension, elementExtension } = isImageValidation(element)
+      mainHtml += printContentNoDescendentFromArray(i, element, validElementExtension, elementExtension)
     }
-    if (typeof element === "object") mainHtml += printContentDescendent(element)
+    if (typeof element === "object") mainHtml += printContentDescendent(element, undefined, i)
   }
   table.innerHTML = mainHtml
 }
